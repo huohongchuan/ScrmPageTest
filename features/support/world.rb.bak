@@ -1,0 +1,9 @@
+module ScrmModule
+	
+	def role_page
+		@role_page ||= RolePage.new(@browser)
+	end
+end
+
+
+World(ScrmModule)

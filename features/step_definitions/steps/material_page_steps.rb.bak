@@ -1,0 +1,5 @@
+#encoding: utf-8
+Given /^我进入素材管理页面$/ do
+  
+  material_page.navigate_to('http://app.biz.social-touch.com/material/admin/list?ui=new&pf_uid=998_282&pf_type=3&bi_expire_time=1609430399&bi_minor_id=0&token=KSDFLSDF1123')
+end

@@ -1,0 +1,57 @@
+#require 'page-object'
+
+module RoleAdmin
+	
+	include PageObject
+
+    #role/admin/add页面elements
+	#定义登录邮箱输入框元素
+	text_field(:user_email, :id => 'userid')
+
+	#定义用户密码输入框元素
+	text_field(:user_pwd1, :id => 'pwd1')
+
+	#
+	text_field(:user_pwd2, :id => 'pwd2')
+
+	#
+	text_field(:user_name, :id => 'username')
+
+	#
+	text_field(:user_job, :id => 'jobtitle')
+
+	#
+	button(:user_save, :class => 'qx-btn qx-btn-hs')
+
+	#用户分组编辑框
+	div(:user_group, :class => 'input-text input-select')
+
+	#用户分组列表
+	div(:user_group_list, :class => 'h-group-td-tree')
+    
+	#用户分组列表所有分组元素
+    def user_group_name
+	    @browser.elements(:class => 'fancytree-title')
+    end
+
+	#role/admin页面elements
+
+	#定义添加用户按钮，生成add_user、add_user_element方法
+	link(:add_user, :class => 'd-head-content-add qx-btn qx-btn-ls')
+
+	#搜索输入框
+	text_field(:select_user_input, :name => 'keyword')
+
+	#点击筛选
+	link(:select_user, :class => 'qx-btn qx-btn-ls')
+
+	#管理员列表
+	table(:admin_user_list, :class => 'd-main-content-table')
+
+    #定位用户列表table
+	def user_list
+		@browser.table(:class => 'd-main-content-table')
+	end
+
+	
+end

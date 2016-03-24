@@ -1,0 +1,6 @@
+module MaterialList
+	
+	include PageObject
+
+	file_field(:load_image, :id => 'imgages')
+	link(:add_noe_material, :id => 'addoneimg')

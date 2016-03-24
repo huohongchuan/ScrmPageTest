@@ -1,0 +1,13 @@
+#encoding: utf-8
+require 'watir-webdriver'
+require 'page-object'
+
+class LoginPage
+	include PageObject
+	
+	def add_cookies(name, vale, opts={})
+		@browser.cookies.add(name, vale, opts={})
+	end
+
+
+end
